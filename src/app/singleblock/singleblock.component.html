@@ -1,0 +1,56 @@
+
+<div style="width: 100%; padding-top: 100px; padding-bottom: 100px;">
+
+
+    <h3 style="text-align: center; margin-bottom: 30px;">Block Level:{{number}}</h3>
+    <table class="table" border="1px" style="width: 80%; margin-left: 10%;">
+        <tr style="">
+            <td style="font-weight: bold;">Hash</td>
+            <td>{{hash}}</td>
+        </tr>
+        <tr style="">
+            <td style="font-weight: bold;">Previous Hash</td>
+            <td>{{block['previoushash']}}</td>
+        </tr>
+        <tr style="">
+            <td style="font-weight: bold;">Miner</td>
+            <td>Unknown</td>
+        </tr>
+        <tr style="">
+            <td style="font-weight: bold;">Height</td>
+            <td>{{block['index']}}</td>
+        </tr>
+        <tr style="">
+            <td style="font-weight: bold;">Nonce</td>
+            <td>{{block['nonce']}}</td>
+        </tr>
+        <tr style="">
+            <td style="font-weight: bold;">Number of transactions</td>
+            <td>{{block['transactions'].length}}</td>
+        </tr>
+    </table>
+
+    <h4 style="text-align: center; margin-top: 50px; margin-bottom: 50px;">Block Transactions</h4>
+
+    <table *ngFor="let t of block['transactions']" class="table" style="width: 70%; margin-left: 15%; table-layout: fixed;">
+
+        <!-- <tr>
+        <div><p style="word-wrap: break-word; width: 30%; float: left;">{{t[0]['From']}}</p></div>
+        <i class="fa fa-arrow-right" aria-hidden="true" style="margin-top: 15px; width: 4%; font-size: 30px; text-align: center; padding-left: 20px; color: green;"></i>
+        <div><p style="word-wrap: break-word; width: 30%; float: left;">{{t[0]['To']}}</p></div>
+    </tr> -->
+
+    <tr style="width: 100%;">
+        <td style="width: 30%; word-wrap: break-word;">{{t[0]['From']}}</td>
+        <td style="width: 10%;"><i class="fa fa-arrow-right" aria-hidden="true" style="margin-top: 15px; width: 4%; font-size: 30px; text-align: center; padding-left: 20px; color: green;"></i>
+        </td>
+        <td style="width: 30%; word-wrap: break-word;">{{t[0]['To']}}</td>
+        <td style="width: 10%;"><i class="fa fa-arrow-right" aria-hidden="true" style="margin-top: 15px; width: 4%; font-size: 30px; text-align: center; padding-left: 20px; color: green;"></i>
+        </td>
+        <td style="width: 10%; word-wrap: break-word;">{{t[0]['amount']}} nikicoins</td>
+        
+    </tr>
+
+    </table>
+
+</div>

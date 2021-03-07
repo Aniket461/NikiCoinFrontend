@@ -1,0 +1,42 @@
+
+
+<div style="width: 90%; margin-left: 5%; padding-top: 55px; height: 100vh;background-color: white; overflow-y: scroll; overflow-x: hidden;">
+
+
+    <div style="position: fixed; width: 90%; height: 50px; background-color: black; color: white; font-weight: bold; font-size: 15px; padding-top: 10px; text-align: center;">
+        <p style="width: 10%; float: left; padding-left: 0px;">
+            Height
+        </p>
+        <p style="width: 15%; float: left;padding-left: 0px;">
+            Total transactions
+        </p>
+        
+        <p style="width: 50%; float: left;padding-left: 0px;">
+            Hash
+        </p>
+        <p style="width: 25%; float: left;padding-left: 0px;">Nonce</p>
+    </div>
+
+    <table  style="width: 100%; table-layout: fixed; margin-top: 50px; border: 3px solid grey;"  class="table">
+        <!-- <thead style="width:100%; position: fixed;" class="thead-dark">
+            <tr>
+                <th style="width: 40%;">From</th>
+                <th style="width: 40%;">To</th>
+                <th style="width: 15%;">Amount</th>
+            </tr>
+        </thead> -->
+       <tbody *ngFor ='let t of blocks[0].reverse()'>
+           <tr style="height: 40px;">
+               <td style="word-wrap: break-word; width: 10%;padding-left: 40px;"><a href="/getblocks/{{t['index']}}">{{t['index']}}</a></td>
+               <td style="word-wrap: break-word; width: 5%;">{{t['transactions'].length}}</td>
+               <td style="word-wrap: break-word; width: 40%; text-align: center;">{{t['hash']}}</td>
+               
+               <td style="word-wrap: break-word; width: 15%; text-align: center;">{{t['nonce']}}</td>
+           </tr>
+       </tbody>
+
+    </table>
+
+
+</div>
+

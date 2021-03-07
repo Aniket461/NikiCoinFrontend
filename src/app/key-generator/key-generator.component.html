@@ -1,0 +1,32 @@
+
+
+<div style="width: 100%; height: 100vh;" class="bgc">
+
+  <div style="text-align: center;">
+  
+  <img src="../../assets/images/logo.png" style="width: 300px; height: 300px; position: absolute; margin-left: -51%;margin-top:30px">
+  </div>
+<div style="width: 50%;margin-left: 25%; position: relative; height: 300px;" class="vertical">
+
+    <form *ngIf='!isPressed' [formGroup]="KeyForm" (ngSubmit)="SubmitPass()">
+    <div class="form-group" style="width: 60%; margin-left: 20%; padding-top: 50px;">
+    <label for="exampleFormControlInput1" style="font-weight: bold;">Enter your name:</label>
+    <input type="text" class="form-control" id="exampleFormControlInput1" name="name" placeholder="John Doe" formControlName="name">
+    <span style="color: red;" class=""  *ngIf="name.errors && name.touched">
+      <span *ngIf="name.errors.required">Full Name is Required</span>
+  </span>
+
+  </div>
+
+  <button [disabled] ="KeyForm.invalid" type="submit" style="width: 20%; height: 40px; text-align: center; margin-left: 40%; margin-top: 50px;" class="getkeybut">Get Keys</button>
+</form>
+
+<div *ngIf="isPressed" style="width: 80%; margin-left: 10%; padding-top: 40px;">
+  <div><p style="font-weight: bold; font-size: 20px;">Hey,{{namek}}</p></div>
+  <div><p style="font-weight: bold; font-size: 20px; float: left; margin-right: 20px;">Public Key:</p> <p style="font-size: 15px;word-wrap: break-word;">{{publicKey}}</p></div>
+  <div><p style="font-weight: bold; font-size: 20px; float: left; margin-right: 20px;">Private Key:</p> <p style="font-size: 15px;word-wrap: break-word;">{{privateKey}}</p></div>
+  <p style="text-align: center; margin-top: 50px; color: red;">Do not disclose or lose your private key!</p>
+</div>
+
+</div>
+</div>

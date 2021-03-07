@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "Nikicoin-Frontend"
+    }
+  },
+  "defaultProject": "Nikicoin-Frontend",
+  "cli": {
+    "analytics": false
+  }
 }
