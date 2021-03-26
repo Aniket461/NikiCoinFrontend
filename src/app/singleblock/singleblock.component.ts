@@ -22,8 +22,8 @@ export class SingleblockComponent implements OnInit {
   }
 
   fetchSingleBlocks(){
-    this.http.get("http://localhost:5000/getblocks/"+this.number, {headers:{'Content-Type': 'application/json'}}).subscribe((data)=>
-    {this.block = data;
+    this.http.get("https://afternoon-island-71031.herokuapp.com/getblocks/"+this.number, {headers:{'Content-Type': 'application/json'}}).subscribe((data)=>
+    {this.block = data[0];
       //this.blocks.reverse(); 
       
     console.log(this.block['hash']);

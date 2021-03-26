@@ -25,7 +25,7 @@ export class AlltransactionsComponent implements OnInit {
 
 
   fetchTransactions(){
-    this.http.get("http://localhost:5000/transactions", {headers:{'Content-Type': 'application/json'}}).subscribe((data)=>
+    this.http.get("https://afternoon-island-71031.herokuapp.com/transactions", {headers:{'Content-Type': 'application/json'}}).subscribe((data)=>
     {this.transactions = Array.of(data); 
       
     console.log(this.transactions[0][0]);

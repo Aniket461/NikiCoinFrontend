@@ -40,7 +40,7 @@ export class KeyGeneratorComponent implements OnInit {
     this.namedata={"name":this.KeyForm.value.name}
 
 
-    var res = this.http.post("http://localhost:5000/keygenerator", this.namedata, {headers:{'Content-Type': 'application/json'}}).toPromise().then(res => {this.keys = res;
+    var res = this.http.post("https://afternoon-island-71031.herokuapp.com/keygenerator", this.namedata, {headers:{'Content-Type': 'application/json'}}).toPromise().then(res => {this.keys = res;
   
     this.isPressed = true;
     this.publicKey = JSON.stringify(this.keys.publickey).replace('"'," ").replace('"'," ").trim();

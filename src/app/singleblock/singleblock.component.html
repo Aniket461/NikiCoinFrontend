@@ -21,6 +21,15 @@
             <td>{{block['index']}}</td>
         </tr>
         <tr style="">
+            <td style="font-weight: bold;">MerkleRoot</td>
+            <td>{{block['merkleroot']}}</td>
+        </tr>
+        
+        <tr style="">
+            <td style="font-weight: bold;">Time Mined</td>
+            <td>{{block['timestamp'] | date:'short'}}</td>
+        </tr>
+        <tr style="">
             <td style="font-weight: bold;">Nonce</td>
             <td>{{block['nonce']}}</td>
         </tr>
@@ -41,13 +50,13 @@
     </tr> -->
 
     <tr style="width: 100%;">
-        <td style="width: 30%; word-wrap: break-word;">{{t[0]['From']}}</td>
+        <td style="width: 30%; word-wrap: break-word;">{{t['From']}}</td>
         <td style="width: 10%;"><i class="fa fa-arrow-right" aria-hidden="true" style="margin-top: 15px; width: 4%; font-size: 30px; text-align: center; padding-left: 20px; color: green;"></i>
         </td>
-        <td style="width: 30%; word-wrap: break-word;">{{t[0]['To']}}</td>
+        <td style="width: 30%; word-wrap: break-word;">{{t['To']}}</td>
         <td style="width: 10%;"><i class="fa fa-arrow-right" aria-hidden="true" style="margin-top: 15px; width: 4%; font-size: 30px; text-align: center; padding-left: 20px; color: green;"></i>
         </td>
-        <td style="width: 10%; word-wrap: break-word;">{{t[0]['amount']}} nikicoins</td>
+        <td style="width: 10%; word-wrap: break-word;">{{t['amount']}} nikicoins</td>
         
     </tr>
 

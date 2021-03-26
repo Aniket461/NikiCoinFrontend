@@ -15,7 +15,7 @@
             Date
         </p>
         <p style="width: 4%; float: left;padding-left: 0px;">Amount</p>
-        <p style="width: 15%; float: left;padding-left: 0px;">Status</p>
+        <p style="width: 15%; float: left;padding-left: 0px;">Confirmed</p>
     </div>
 
     <table  style="width: 100%; table-layout: fixed; margin-top: 50px; border: 3px solid grey;"  class="table" >
@@ -35,16 +35,18 @@
                <td style="word-wrap: break-word; width: 20%; text-align: center;">{{t[0]['amount']}}</td>
                <td style="width: 15%;">pending!!!</td> -->
            
-               <td style="width: 30%; word-wrap:break-word;">{{t[0]['From']}}</td>
+               <td style="width: 30%; word-wrap:break-word;">{{t['From']}}</td>
                <td style="width: 10%;"><i class="fa fa-arrow-right" aria-hidden="true" style="margin-top: 15px; width: 4%; font-size: 30px; text-align: center; padding-left: 20px; color: green;"></i></td>
-                <td style="width: 30%; word-wrap:break-word;">{{t[0]['To']}}</td>
+                <td style="width: 30%; word-wrap:break-word;">{{t['To']}}</td>
                 <td style="width: 15%;">
-                    {{t[0]['timestamp'] | date:'short'}}
+                    {{t['timestamp'] | date:'short'}}
                 </td>
                 <td style="width: 10%;">
-                    {{t[0]['amount']}}
-                </td>
-                <td style="width: 10%; color: red; font-size: 15px; font-weight: bold;">Unconfirmed!</td>
+                    {{t['amount']}}
+                </td> 
+                <td style="width: 10%; color: green; font-size: 15px; font-weight: bold;" *ngIf="t['confirm'] == 'yes'" >{{['confirm']}}</td>
+                
+                <td style="width: 10%; color: red; font-size: 15px; font-weight: bold;" *ngIf="t['confirm'] == 'no'" >{{t['confirm']}}</td>
            
             </tr>
        </tbody>

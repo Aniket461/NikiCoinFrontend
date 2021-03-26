@@ -25,7 +25,7 @@ export class BlocksComponent implements OnInit {
 
 
   fetchBlocks(){
-    this.http.get("http://localhost:5000/getblocks", {headers:{'Content-Type': 'application/json'}}).subscribe((data)=>
+    this.http.get("https://afternoon-island-71031.herokuapp.com/getblocks", {headers:{'Content-Type': 'application/json'}}).subscribe((data)=>
     {this.blocks = Array.of(data);
       //this.blocks.reverse(); 
       

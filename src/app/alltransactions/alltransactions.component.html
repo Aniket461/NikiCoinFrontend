@@ -27,12 +27,12 @@
         </thead> -->
        <tbody *ngFor ='let t of transactions[0].reverse()'>
            <tr style="height: 40px;">
-               <td style="word-wrap: break-word; width: 36%;">{{t[0]['From']}}</td>
+               <td style="word-wrap: break-word; width: 36%;">{{t['From']}}</td>
                <i class="fa fa-arrow-right" aria-hidden="true" style="margin-top: 15px; width: 4%; font-size: 30px; text-align: center; padding-left: 20px; color: green;"></i>
-               <td style="word-wrap: break-word; width: 33%;">{{t[0]['To']}}</td>
-               <td style="word-wrap: break-word; width: 13%; text-align: center; padding-left: 20px;">{{t[0]['timestamp']  | date:'short'}}</td>
+               <td style="word-wrap: break-word; width: 33%;">{{t['To']}}</td>
+               <td style="word-wrap: break-word; width: 13%; text-align: center; padding-left: 20px;">{{t['timestamp']  | date:'short'}}</td>
                
-               <td style="word-wrap: break-word; width: 10%; text-align: center;">{{t[0]['amount']}}</td>
+               <td style="word-wrap: break-word; width: 10%; text-align: center;">{{t['amount']}}</td>
            </tr>
        </tbody>
 

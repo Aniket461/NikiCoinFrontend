@@ -1,1 +1,84 @@
+
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="z-index: 102;position: fixed;width: 100%;">
+    <a class="navbar-brand" href="" style="color: gold; font-style: italic;">$$NikiCoin</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mr-auto">
+        
+        <li *ngIf="checkuser() != null" class="nav-item">
+          <a class="nav-link" href="/createtransaction">Create Transaction</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="/transactions">Transactions</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/pendingtransactions">Pending Transactions</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/getbalance">Check Balance</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/keygenerator">Generate Keys</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/blocks">Blocks</a>
+        </li>        
+
+      </ul>
+
+      <ul *ngIf="checkuser() != null" class="navbar-nav justify-content-end">
+        <li class="nav-item"  style="cursor: pointer;">
+            <a class="nav-link" data-toggle="modal" data-target="#exampleModal">Welcome, {{getname()}}</a>
+          </li> 
+        <li class="nav-item">
+            <a class="nav-link" style="cursor: pointer;" (click)="logout()"><i class="fa fa-power-off" aria-hidden="true"></i>
+            </a>
+          </li>        
+  
+      </ul>
+    </div>
+  </nav>
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header" style="display: block;">
+          <h5 class="modal-title" id="exampleModalLabel" style="text-align: center; color: gold; font-size: 25px;">Welcome to NikiCoin Wallet</h5>
+          <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button> -->
+        </div>
+        <div class="modal-body">
+          <div style="display: flex; flex-direction: row;">
+
+            <label style="margin-right: 60px; color: black; font-size: 18px; font-weight: bold;">Name:</label>
+            <p>{{getname()}}</p>
+
+          </div>
+          <div style="display: flex; flex-direction: row;">
+
+            <label style="margin-right: 65px;color: black; font-size: 18px; font-weight: bold;">Email:</label>
+            <p>{{getemail()}}</p>
+
+          </div>
+
+          <div style="display: flex; flex-direction: row; width: 100%;">
+
+            <label style="margin-right: 20px;color: black; font-size: 18px; font-weight: bold;">Public Key:</label>
+            <p style="word-wrap: break-word; width: 70%;">{{getkey()}}</p>
+
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+         
+        </div>
+      </div>
+    </div>
+  </div>
+
 <router-outlet></router-outlet>

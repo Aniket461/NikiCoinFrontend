@@ -44,8 +44,10 @@
     
 
       <div style="display: flex; justify-content: center; margin-bottom: 30px;">
-    <button [disabled] ="KeyForm.invalid" type="submit" style="width: 180px; height: 40px; text-align: center; margin: 0% auto; margin-top: 15px;" class="getkeybut">Create Transaction</button>
-      </div>
+    <button *ngIf="!isBuutonPress" [disabled] ="KeyForm.invalid" type="submit" style="width: 180px; height: 40px; text-align: center; margin: 0% auto; margin-top: 15px;" class="getkeybut">Create Transaction</button>
+    <button *ngIf="isBuutonPress" disabled type="submit" style="width: 180px; height: 40px; text-align: center; margin: 0% auto; margin-top: 15px;" class="getkeybut">Processing...</button>
+       
+  </div>
   </form>
   
   <div *ngIf="isPressed" style="width: 70%; margin-left: 15%; padding-top: 80px;">

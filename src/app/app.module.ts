@@ -16,6 +16,9 @@ import { MinersComponent } from './miners/miners.component';
 import { PendingtransactionsComponent } from './pendingtransactions/pendingtransactions.component';
 import { MiningpageComponent } from './miningpage/miningpage.component';
 import { HomeComponent } from './home/home.component';
+import { RegistrationComponent } from './registration/registration.component';
+import { TestService } from 'src/services/test';
+import { AuthGuard } from 'src/services/routeguard';
 
 @NgModule({
   declarations: [
@@ -30,7 +33,8 @@ import { HomeComponent } from './home/home.component';
     MinersComponent,
     PendingtransactionsComponent,
     MiningpageComponent,
-    HomeComponent
+    HomeComponent,
+    RegistrationComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +43,7 @@ import { HomeComponent } from './home/home.component';
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [TestService,AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

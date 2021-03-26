@@ -1,15 +1,69 @@
-<div style="width: 100%; height: 100vh; padding-top: 100px;" class="bgc">
+<div style="width: 100%; height: 100vh; padding-top: 00px; display: flex; flex-direction: row;" class="bgc">
 
-    <div style="display: flex; flex-direction: column; align-items: center;">
+
+
     
-        <img src="../../assets/images/logo.png" style="width: 350px; height: 350px;">
-
-
-        <div style="text-align: center; margin-top: -50px;">
+    <div *ngIf="checklogin() == null" style="width: 40%; height: 100vh; z-index: 100; position: relative;">
+    
+        <div style="width: 90%; margin-left: 15%; height: 70%; background-color: white; margin-top: 30%; border-radius: 20px; box-shadow:5px 5px 10px 10px rgba(0,0,0,0.2);">
         
-            <h3 style="color:white; font-weight: bold; font-style: italic;">NikiCoin - A small notion of Blockchain & Bitcoin</h3>
+            <div style="display: flex; flex-direction: column; align-items: center; padding-top: 30px;">
+            
+
+                <h5 style="color:gold">Login to NikiCoin Wallet</h5>
+                <form *ngIf='!isPressed' [formGroup]="KeyForm" (ngSubmit)="SubmitPass()" style="width: 100%; padding-top: 10px;">
+
+
+                    <div class="form-group" style=" width: 70%; margin-left: 15%; padding-top: 20px;">
+                    <label for="exampleFormControlInput1" style="font-weight: bold;">Enter User ID:</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput1" name="userid" placeholder="example@company.com" formControlName="userid">
+                    <span style="color: red;" class=""  *ngIf="userid.errors && userid.touched">
+                      <span *ngIf="userid.errors.required">Address is Required</span>
+                  </span>
+                  </div>
+                
+                  <div class="form-group" style="width: 70%; margin-left: 15%; padding-top: 10px;">
+                      <label for="exampleFormControlInput1" style="font-weight: bold;">Enter Password:</label>
+                      <input type="password" class="form-control" id="exampleFormControlInput1" name="password" placeholder="*****" formControlName="password">
+                      <span style="color: red;" class=""  *ngIf="password.errors && password.touched">
+                        <span *ngIf="password.errors.required">password is Required</span>
+                    </span>
+                    </div>
+
+                   <div *ngIf="isError" style="text-align: center;"> <span  style="color: red; font-size: 12px; text-align: center; width: 100%;">Invalid Userid and Password Combination</span></div>
+  
+                    
+      <div style="display: flex; justify-content: center; flex-direction: row; margin-bottom: 30px; margin-top: 40px;">
+        <button *ngIf="!isButtonPress" [disabled] ="KeyForm.invalid" type="submit" style="width: 180px; height: 40px; text-align: center; margin: 0% auto; margin-top: 15px;" class="getkeybut">Login</button>
+        <button *ngIf="isButtonPress" disabled type="submit" style="width: 180px; height: 40px; text-align: center; margin: 0% auto; margin-top: 15px;" class="getkeybut">Loging in...</button>
+              
+    </div>
+
+          <div style="display: flex; justify-content: center;">
+        
+            <a href="/register">Not Registered Yet? Register Here...</a>
+        </div>
+                    </form>
+
+            </div>
+        
+        </div>
+
+    </div>
+
+    <div style="display: flex; flex-direction: column; align-items: center; text-align: center; width: 100%;  padding-top: 100px;">
+    
+        
+        <img src="../../assets/images/logo.png" style="width: 350px; height: 350px; text-align: center;">
+
+
+        <div style="text-align: left; margin-top: -50px;">
+        
+            <h3 style="color:white; font-weight: bold; font-style: italic; font-size: 35px;">NikiCoin - A small notion of Blockchain & Bitcoin</h3>
 
         </div>
+
+
 
     </div>
 

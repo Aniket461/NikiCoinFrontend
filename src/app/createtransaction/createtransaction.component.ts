@@ -12,7 +12,7 @@ export class CreatetransactionComponent implements OnInit {
   KeyForm:FormGroup;
   transaction:any;
   result:any;
-  
+  isBuutonPress:boolean=false;
 
   constructor(private http:HttpClient) { 
 
@@ -44,18 +44,23 @@ export class CreatetransactionComponent implements OnInit {
   isPressed: boolean = false;
 
   SubmitPass(){
+    this.isBuutonPress = true;
 
     this.transaction={"from":this.KeyForm.value.sname,"to":this.KeyForm.value.rname,"amount":this.KeyForm.value.amount,"privatekey":this.KeyForm.value.pkey, "timestamp":Date.now()};
 
     console.log(this.transaction);
-    var res = this.http.post("http://localhost:5000/createtransaction", this.transaction, {headers:{'Content-Type': 'application/json'}}).toPromise().then(res => {this.result = JSON.stringify(res['data']).replace('"'," ").replace('"'," ").trim();
+    var res = this.http.post("https://afternoon-island-71031.herokuapp.com/createtransaction", this.transaction, {headers:{'Content-Type': 'application/json'}}).toPromise().then(res => {console.log(res);  this.result = JSON.stringify(res['data']).replace('"'," ").replace('"'," ").trim();
   
     this.isPressed = true;
-    console.log(JSON.stringify(this.result.data));
+    
+    console.log(JSON.stringify(this.result));
+
+    this.isBuutonPress = false;
 
     //console.log(this.KeyForm.value.address);
   }).catch(err=>{
     console.log(err);
+    this.isBuutonPress = false;
   });
 
   }

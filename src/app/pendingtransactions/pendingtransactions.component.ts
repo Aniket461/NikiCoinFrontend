@@ -18,15 +18,13 @@ export class PendingtransactionsComponent implements OnInit {
 
 
   ngOnInit(): void {
-
-
     this.fetchTransactions();
 
   }
 
 
   fetchTransactions(){
-    this.http.get("http://localhost:5000/pendingtransactions", {headers:{'Content-Type': 'application/json'}}).subscribe((data)=>
+    this.http.get("https://afternoon-island-71031.herokuapp.com/pendingtransactions", {headers:{'Content-Type': 'application/json'}}).subscribe((data)=>
     {this.transactions = Array.of(data); 
       
     console.log(this.transactions[0][0]);
