@@ -17,7 +17,7 @@ export class CreatetransactionComponent implements OnInit {
   constructor(private http:HttpClient) { 
 
     this.KeyForm = new FormGroup({
-      sname:new FormControl(null,[Validators.required]),
+      sname:new FormControl(sessionStorage.getItem('publickey'),[Validators.required]),
       rname:new FormControl(null,[Validators.required]),
       amount:new FormControl(null,[Validators.required]),
       pkey:new FormControl(null,[Validators.required]),
