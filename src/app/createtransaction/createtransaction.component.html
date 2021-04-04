@@ -28,9 +28,10 @@
   
       <div class="form-group" style="width: 60%; margin-left: 20%; padding-top: 10px;">
         <label for="exampleFormControlInput1" style="font-weight: bold;">Enter the Amount:</label>
-        <input type="text" class="form-control" id="exampleFormControlInput1" name="amount" placeholder="Eg: 100" formControlName="amount">
+        <input type="number" class="form-control" id="exampleFormControlInput1" name="amount" placeholder="Eg: 100" formControlName="amount">
         <span style="color: red;" class=""  *ngIf="amount.errors && amount.touched">
           <span *ngIf="amount.errors.required">Amount is Required</span>
+          <span *ngIf="amount.errors.min">Minimum amount is 0.00001 coins</span>
       </span>
       </div>
   

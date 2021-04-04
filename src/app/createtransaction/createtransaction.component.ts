@@ -18,8 +18,8 @@ export class CreatetransactionComponent implements OnInit {
 
     this.KeyForm = new FormGroup({
       sname:new FormControl(sessionStorage.getItem('publickey'),[Validators.required]),
-      rname:new FormControl(null,[Validators.required]),
-      amount:new FormControl(null,[Validators.required]),
+      rname:new FormControl(null,[Validators.required,]),
+      amount:new FormControl(null,[Validators.required, Validators.min(0.00001)]),
       pkey:new FormControl(null,[Validators.required]),
     });
 
@@ -46,7 +46,7 @@ export class CreatetransactionComponent implements OnInit {
   SubmitPass(){
     this.isBuutonPress = true;
 
-    this.transaction={"from":this.KeyForm.value.sname,"to":this.KeyForm.value.rname,"amount":this.KeyForm.value.amount,"privatekey":this.KeyForm.value.pkey, "timestamp":Date.now()};
+    this.transaction={"from":this.KeyForm.value.sname,"to":this.KeyForm.value.rname,"amount":this.KeyForm.value.amount.toString(),"privatekey":this.KeyForm.value.pkey, "timestamp":Date.now()};
 
     console.log(this.transaction);
     var res = this.http.post("https://afternoon-island-71031.herokuapp.com/createtransaction", this.transaction, {headers:{'Content-Type': 'application/json'}}).toPromise().then(res => {console.log(res);  this.result = JSON.stringify(res['data']).replace('"'," ").replace('"'," ").trim();
