@@ -28,6 +28,9 @@
           <a class="nav-link" href="/blocks">Blocks</a>
         </li>        
 
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="modal" data-target="#exampleModal2">Downloads</a>
+        </li>   
       </ul>
 
       <ul *ngIf="checkuser() != null" class="navbar-nav justify-content-end">
@@ -42,6 +45,41 @@
       </ul>
     </div>
   </nav>
+
+
+  
+  <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header" style="display: block;">
+          <h5 class="modal-title" id="exampleModalLabel" style="text-align: center; color: gold; font-size: 25px;">Welcome to NikiCoin Wallet</h5>
+          <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button> -->
+        </div>
+        <div class="modal-body">
+          <div style="display: flex; flex-direction: column;">
+
+            <label style="margin-right: 60px; color: black; font-size: 18px; font-weight: bold;">Mobile Application(Android Only)</label>
+            <a href="https://drive.google.com/drive/folders/1BSgGRBJDk9Vk-UUCm9avzaIy09lmzX57?usp=sharing"><p>Get The Mobile App</p></a>
+
+          </div>
+          <div style="display: flex; flex-direction: column;">
+
+            <label style="margin-right: 65px;color: black; font-size: 18px; font-weight: bold;">Miner Application(Windows only)</label>
+            <a href="https://drive.google.com/drive/folders/12H1_KZ5UqDYpzIx6tYsZYqU5wbkmbOqE?usp=sharing"><p>Get The Miner Application</p></a>
+
+          </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+         
+        </div>
+      </div>
+    </div>
+  </div>
+
 
   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
