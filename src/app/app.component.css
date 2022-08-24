@@ -3,3 +3,13 @@ p{
     color: grey;
     font-weight: 400;
 }
+
+@media only screen and (max-width: 600px) { /* CSS HERE ONLY ON PHONE */ 
+    .bgc{
+        display: none;
+    }
+    .mobdis{
+        display: none;
+    }
+
+}
